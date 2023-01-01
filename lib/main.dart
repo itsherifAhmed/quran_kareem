@@ -7,17 +7,7 @@ void main() {
   runApp(const MyApp());
 }
 
-List arabic =[];
-List malayalam =[];
-List quran =[];
 
-Future readJson ()async{
-  final String response =await rootBundle.loadString("assets/hafs_smart_v8.json");
-  final data=json.decode(response);
-  arabic=data["quran"];
-  malayalam=data["malayalam"];
-  return quran=[arabic,malayalam];
-}
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -28,10 +18,18 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((_) async{
+    WidgetsBinding
+        .instance
+        .addPostFrameCallback(
+
+            (_) async{
       await readJson();
       await getSettings();
-    });
+    }
+
+
+
+    );
     super.initState();
   }
   @override

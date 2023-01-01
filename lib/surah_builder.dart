@@ -4,10 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'constant.dart';
 
-final ItemScrollController itemScrollController = ItemScrollController();
-final ItemPositionsListener itemPositionsListener =
-    ItemPositionsListener.create();
-bool fabIsClicked = true;
+
 
 class SurahBuilder extends StatefulWidget {
   final sura;
@@ -25,11 +22,6 @@ class SurahBuilder extends StatefulWidget {
 class _SurahBuilderState extends State<SurahBuilder> {
   bool view = true;
 
-  ///initstate
-  ///jumbtoayah
-  ///savebookmark
-  ///verseBuilding
-  ///singleSuraBUILDERS
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) => jumbToAyah());
@@ -44,11 +36,6 @@ class _SurahBuilderState extends State<SurahBuilder> {
           curve: Curves.easeInOutCubic);
     }
     fabIsClicked = false;
-  }
-  saveBookMark (surah,ayah)async{
-    final prefs=await SharedPreferences.getInstance();
-    await prefs.setInt("surah", surah);
-    await prefs.setInt("ayah", ayah);
   }
 
   Row verseBuilder(int index, previousVerses) {

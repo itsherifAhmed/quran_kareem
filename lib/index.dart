@@ -5,8 +5,6 @@ import 'mydrawer.dart';
 import 'surah_builder.dart';
 import 'constant.dart';
 import 'package:ytquran/arabic_sura_number.dart';
-int bookmarkedAyah = 1;
-int bookmarkedSura = 1;
 
 class IndexPage extends StatefulWidget {
   const IndexPage({Key? key}) : super(key: key);
@@ -16,18 +14,7 @@ class IndexPage extends StatefulWidget {
 }
 
 class _IndexPageState extends State<IndexPage> {
-  readBookmark() async {
-    print("read book mark called");
-    final prefs = await SharedPreferences.getInstance();
-    //prefs.clear();
-    try {
-      bookmarkedAyah = prefs.getInt('ayah')!;
-      bookmarkedSura = prefs.getInt('surah')!;
-      return true;
-    } catch (e) {
-      return false;
-    }
-  }
+
 
   @override
   Widget build(BuildContext context) {
