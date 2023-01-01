@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/itsherifAhmed">
-    <img src="assets/images/quran.png" alt="Logo" width="80" height="80">
+    <img src="assets/quran.png" alt="Logo" width="100" height="100">
   </a>
 
 ![flutter](https://img.shields.io/badge/Flutter-Framework-green?logo=flutter)
